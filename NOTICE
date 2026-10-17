@@ -1,0 +1,14 @@
+NOTICE
+======
+
+TMAL is built on and extends the DConnNet codebase from:
+
+    Zyun-Y/DconnNet
+    "Directional Connectivity-based Segmentation of Medical Images"
+    CVPR 2023
+    https://github.com/Zyun-Y/DconnNet
+
+
+This TMAL repository is provided for the anonymous peer review submission of
+the WACV 2027 manuscript. Author identities are withheld during review and
+will be added at camera-ready if accepted.

@@ -1,0 +1,67 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "CHASEDB1 Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "--dataset",
+                "chase",
+                "--data_root",
+                "data/chase",
+                "--resize",
+                "960",
+                "960",
+                "--num-class",
+                "1",
+                "--batch-size",
+                "4",
+                "--epochs",
+                "130",
+                "--lr",
+                "0.0038",
+                "--lr-update",
+                "poly",
+                "--folds",
+                "5",
+                "--label_mode",
+                "binary"
+            ]
+        },
+        {
+            "name": "CHASEDB1 Train (distance connectivity)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "--dataset",
+                "chase",
+                "--data_root",
+                "data/chase",
+                "--resize",
+                "960",
+                "960",
+                "--num-class",
+                "1",
+                "--batch-size",
+                "4",
+                "--epochs",
+                "130",
+                "--lr",
+                "0.0038",
+                "--lr-update",
+                "poly",
+                "--folds",
+                "5",
+                "--label_mode",
+                "dist",
+            ]
+        }
+    ]
+}
