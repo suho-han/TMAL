@@ -1,0 +1,19 @@
+.git
+.venv
+.pytest_cache
+.vscode
+
+# Bind-mounted at runtime instead of baked into the image
+/data
+/ckpts
+output/
+output*/
+logs/
+*.log
+*.pth
+
+__pycache__/
+*.py[codz]
+.mypy_cache/
+.ruff_cache/
+.hypothesis/

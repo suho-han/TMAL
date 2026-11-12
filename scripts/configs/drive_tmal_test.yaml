@@ -1,0 +1,99 @@
+device: 0
+seed: 42
+dataset: drive
+data_root: data/DRIVE
+resize:
+- 512
+- 512
+label_mode: dist_inverted
+model: dconnnet
+num_channels: null
+diff_timesteps: 100
+diff_objective: pred_noise
+beta_schedule: linear
+image_size: 128
+num_class: 1
+batch_size: 4
+epochs: 500
+max_train_batches: 0
+max_eval_batches: 0
+lr: 0.0038
+lr_update: poly
+optimizer: adam
+weight_decay: 0.0
+lr_step: 12
+gamma: 0.5
+folds: 1
+target_fold: null
+conn_num: 8
+conn_layout: standard8
+final_decision: max
+conn_fusion: dg_dsf
+fusion_branches: io
+fusion_lambda_middle: 0.05
+fusion_lambda_fused: 0.3
+fusion_residual_scale: 0.2
+use_seg_aux: true
+seg_aux_weight: 0.5
+fusion_gate_reg_weight: 0.01
+conn_aux_c3_weight: 0.5
+conn_aux_c4_weight: 0.2
+conn_aux_c5_weight: 0.3
+conn_aux_c6_weight: 0.2
+conn_aux_c7_weight: 0.2
+legacy_aux_weight: 0.0
+debug_loss_breakdown: false
+simple_loss: false
+tau: 3.0
+sigma: 2.0
+dist_aux_loss: smooth_l1
+dist_sf_l1_gamma: 1.0
+pretrained: null
+save: output/drive/dist_inverted_dg_dsf_io_8_smooth_l1_segaux_w0.5_c3-0.5_c5-0.3
+output_dir: output
+experiment_name_suffix: c3-0.5_c5-0.3
+save_per_epochs: 50
+monitor_metric: val_dice
+early_stopping_patience: 20
+early_stopping_min_delta: 0.001
+early_stopping_tie_eps: 0.0001
+early_stopping_stop_interval: 10
+tie_break_with_loss: true
+save_best_only: false
+external_data: null
+test_only: false
+connectivity_layout:
+  name: standard8
+  channel_count: 8
+  kernel_size: 3
+  include_center: false
+  offsets:
+  - - 1
+    - 1
+  - - 1
+    - 0
+  - - 1
+    - -1
+  - - 0
+    - 1
+  - - 0
+    - -1
+  - - -1
+    - 1
+  - - -1
+    - 0
+  - - -1
+    - -1
+  conn_num: 8
+conn_channels: 8
+monitoring_config:
+  monitor_metric: val_dice
+early_stopping_config:
+  patience: 20
+  min_delta: 0.001
+  tie_eps: 0.0001
+  stop_interval: 10
+  tie_break_with_loss: true
+checkpoint_config:
+  save_best_only: false
+  save_per_epochs: 50

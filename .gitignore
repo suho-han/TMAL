@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[codz]
+*$py.class
+
+# Virtual environments / local env
+.venv/
+.env
+.envrc
+.direnv/
+
+# Test / coverage artifacts
+.pytest_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# Tool caches
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+
+# Local tooling
+.codex
+.agents/
+.claude/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+skills-lock.json
+
+# Project artifacts
+# Ignore top-level data/ but allow data/ in subdirectories (e.g. src/data/)
+/data/
+output/
+output*/
+*.pth
+tmp_img/
+notebooks/paper_samples/
+logs/
+*.log
+*.egg-info/
+backups/
