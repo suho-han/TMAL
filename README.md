@@ -188,6 +188,10 @@ scripts/run_ours.sh <drive|deepcrack> <train|test> [extra train.py flags]
 just prints the command. For new experiments, use `scripts/train_launcher.sh` with a
 `single`/`multi` YAML instead — see `scripts/train_launcher.md`.
 
+Released checkpoints live at <https://huggingface.co/suho-han/TMAL>; fetch one with
+`python scripts/download_ckpts.py --dataset drive` (or `all`). Test-mode runs fetch missing
+weights automatically. Until the Hugging Face repo is public, set `HF_TOKEN` or run `huggingface-cli login`.
+
 Each run writes its outputs under `output/<dataset>/<experiment_name>/`, including a
 `result.txt` summary in the paper's Dice/IoU/clDice/β0/β1/HD95 format (mean ± std over the
 evaluated split) — check it first for a quick read of a run's results, alongside the more

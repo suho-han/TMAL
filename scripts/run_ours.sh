@@ -46,6 +46,23 @@ if [[ ! -x "${PYTHON_BIN}" ]]; then
   exit 127
 fi
 
+DRY_RUN=false
+for ARG in "$@"; do
+  if [[ "${ARG}" == "--dry_run" ]]; then
+    DRY_RUN=true
+    break
+  fi
+done
+
+if [[ "${MODE}" == "test" && "${DRY_RUN}" == false && ! -f "${CKPT}" ]]; then
+  (cd "${REPO_ROOT}" && "${PYTHON_BIN}" "${SCRIPT_DIR}/download_ckpts.py" --dataset "${DATASET}") || true
+  if [[ ! -f "${CKPT}" ]]; then
+    echo "Missing checkpoint: ${CKPT}" >&2
+    usage
+    exit 2
+  fi
+fi
+
 ARGS=(--config "${CONFIG}" --mode "${MODE}")
 if [[ "${MODE}" == "test" ]]; then
   ARGS+=(--pretrained "${CKPT}")
