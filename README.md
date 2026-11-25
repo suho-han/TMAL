@@ -1,4 +1,4 @@
-# TMAL: Topology-preserving Multi-scale Affinity Learning for Curvilinear Structure Segmentation
+# TMAL: Topology-preserving Multi-offset Affinity Learning for Curvilinear Structure Segmentation
 
 Official implementation of TMAL for the WACV 2027 submission.
 
